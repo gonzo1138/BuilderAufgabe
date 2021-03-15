@@ -47,16 +47,16 @@ public class HTMLtag {
 
         // open tag
         sb.append("<").append(this.tagName);
-        attributes.entrySet().stream().forEach(e -> sb.append(" ").append(e.getKey()).append("=\"").append(e.getValue()).append("\""));
+        this.attributes.entrySet().stream().forEach(e -> sb.append(" ").append(e.getKey()).append("=\"").append(e.getValue()).append("\""));
         sb.append(">").append("\n");
 
         // tag content
-        sb.append(String.valueOf(indentation).repeat(Math.max(0, indentations)));
-        for (HTMLtag t:subTags) sb.append(t);
-        sb.append(tagValue).append("\n");
+        sb.append(String.valueOf(this.indentation).repeat(Math.max(0, this.indentations)));
+        for (HTMLtag t:this.subTags) sb.append(t);
+        sb.append(this.tagValue).append("\n");
 
         // close tag
-        sb.append("</").append(tagName).append(">").append("\n");
+        sb.append("</").append(this.tagName).append(">").append("\n");
 
         return sb.toString();
     }

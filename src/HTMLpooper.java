@@ -15,6 +15,9 @@ public class HTMLpooper {
     public static void main(String[] args) {
 
         HTMLpage hp = new HTMLbuilder()
+                .addTag("html")
+                .addSubTag(new HTMLtag("head"))
+                .build();
 
         // write Head
 

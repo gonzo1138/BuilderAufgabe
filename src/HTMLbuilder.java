@@ -7,6 +7,11 @@ public class HTMLbuilder {
         return this;
     }
 
+    public HTMLbuilder addTag(String tag){
+        this.buildObject.tags.add(new HTMLtag(tag));
+        return this;
+    }
+
     public HTMLbuilder addTag(String tag,String inhalt){
         this.buildObject.tags.add(new HTMLtag(tag,inhalt));
         return this;
